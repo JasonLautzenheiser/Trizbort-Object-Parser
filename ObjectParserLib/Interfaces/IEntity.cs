@@ -6,10 +6,7 @@ namespace ObjectParserLib.Interfaces
 {
   public interface IEntity
   {
-    Guid ID { get; }
     string Name { get; }
-    bool Worn { get; }
-    bool Part { get; }
 
     IEntity AddChild(IEntity child);
     IList<IEntity> GetChildren();

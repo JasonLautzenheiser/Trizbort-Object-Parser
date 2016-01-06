@@ -94,5 +94,44 @@ namespace ObjectParserTests
       var thing2 = thing.AddPart(new Thing("hatband"));
       Assert.That(thing.HasParts,Is.True);
     }
+
+    [Test]
+    public void addNullPartReturnsNull()
+    {
+      Thing thing = new Thing("hat");
+      var thing2 = thing.AddPart(null);
+      Assert.That(thing2, Is.Null);
+    }
+
+    [Test]
+    public void thingIsPartOf()
+    {
+      Thing thing = new Thing("hat");
+      var thing2 = new Thing("hatband");
+
+      thing.AddPart(thing2);
+      Assert.That(thing2.IsPartOf, Is.True);
+
+    }
+
+    [Test]
+    public void getPartsReturnsPartsofThing()
+    {
+      Thing thing = new Thing("hat");
+      var thing2 = thing.AddPart(new Thing("hatband"));
+      Assert.That(thing.GetParts().First().SameIdentityAs(thing2), Is.True);
+
+    }
+
+    [Test]
+    public void thingIsWorn()
+    {
+      Person person = new Person("Jason");
+      Thing thing = new Thing("hat");
+
+      person.WearItem(thing);
+      Assert.That(thing.IsWorn, Is.True);
+    }
+
   }
 }

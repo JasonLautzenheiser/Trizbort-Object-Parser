@@ -25,6 +25,7 @@ namespace ObjectParserLib.Entities
     public override IEntity WearItem(IEntity item)
     {
       if (item == null) return null;
+      ((Entity)item).Worn = true;
       clothing.Add(item);
       return item;
     }

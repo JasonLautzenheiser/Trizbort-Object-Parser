@@ -13,15 +13,13 @@ namespace ObjectParserLib.Entities
     protected Entity(string name)
     {
       Name = name;
-      ID = Guid.NewGuid();
       children = new List<IEntity>();
       parts = new List<IEntity>();
     }
 
-    public Guid ID { get; }
     public string Name { get; }
-    public bool Worn { get; protected set; }
-    public bool Part { get; protected set; }
+    internal bool Worn { get; set; }
+    internal bool Part { get; set; }
 
     public virtual IEntity WearItem(IEntity item)
     {
@@ -48,6 +46,7 @@ namespace ObjectParserLib.Entities
     public IEntity AddPart(IEntity child)
     {
       if (child == null) return null;
+      ((Entity)child).Part = true;
       parts.Add(child);
       return child;
     }
@@ -71,5 +70,14 @@ namespace ObjectParserLib.Entities
     public abstract bool IsSupporter();
     public abstract bool IsContainer();
     public abstract bool IsThing();
+
+    public virtual bool IsPartOf()
+    {
+      return Part;
+    }
+    public virtual bool IsWorn()
+    {
+      return Worn;
+    }
   }
 }
