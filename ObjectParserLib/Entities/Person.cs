@@ -35,6 +35,8 @@ namespace ObjectParserLib.Entities
       return clothing;
     }
 
+    public Gender Gender { get; set; }
+
     public override bool IsPerson()
     {
       return true;
@@ -54,5 +56,27 @@ namespace ObjectParserLib.Entities
     {
       return false;
     }
+
+    public bool IsMale()
+    {
+      return Gender == Gender.Male;
+    }
+
+    public bool IsFemale()
+    {
+      return Gender == Gender.Female;
+    }
+
+    public bool IsNeutral()
+    {
+      return Gender == Gender.Neutral;
+    }
+  }
+
+  public enum Gender
+  {
+    Male,
+    Female,
+    Neutral
   }
 }

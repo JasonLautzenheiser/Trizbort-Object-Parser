@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerTests.cs" />
+    <Compile Include="ParserAttributeTests.cs" />
+    <Compile Include="ParserTests.cs" />
     <Compile Include="PeopleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupporterTests.cs" />

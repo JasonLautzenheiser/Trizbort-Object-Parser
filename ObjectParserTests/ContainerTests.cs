@@ -5,6 +5,7 @@ using ObjectParserLib.Exceptions;
 
 namespace ObjectParserTests
 {
+  [TestFixture]
   public class ContainerTests
   {
     [Test]

@@ -5,6 +5,7 @@ using ObjectParserLib.Interfaces;
 
 namespace ObjectParserLib.Entities
 {
+
   public abstract class Entity :IEntity
   {
     private readonly List<IEntity> children;
@@ -12,12 +13,13 @@ namespace ObjectParserLib.Entities
 
     protected Entity(string name)
     {
-      Name = name;
+      Name = name.Trim();
       children = new List<IEntity>();
       parts = new List<IEntity>();
     }
 
     public string Name { get; }
+    public bool Scenery { get; set; }
     internal bool Worn { get; set; }
     internal bool Part { get; set; }
 

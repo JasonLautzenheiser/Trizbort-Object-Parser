@@ -47,9 +47,14 @@
     <Compile Include="Entities\Thing.cs" />
     <Compile Include="Exceptions\CanNotWearItemsException.cs" />
     <Compile Include="Exceptions\NoChildrenForThingsException.cs" />
+    <Compile Include="Exceptions\PersonCannotBeContainer.cs" />
+    <Compile Include="Exceptions\PersonCannotBeScenery.cs" />
+    <Compile Include="Exceptions\PersonCannotBeSupporter.cs" />
+    <Compile Include="Exceptions\PersonCannotBeTwoGenders.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

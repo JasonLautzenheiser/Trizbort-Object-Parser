@@ -45,5 +45,10 @@ namespace ObjectParserLib.Entities
     {
       return true;
     }
+
+    public bool IsScenery()
+    {
+      return Scenery;
+    }
   }
 }

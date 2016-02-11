@@ -7,6 +7,7 @@ namespace ObjectParserLib.Interfaces
   public interface IEntity
   {
     string Name { get; }
+    bool Scenery { get; set; }
 
     IEntity AddChild(IEntity child);
     IList<IEntity> GetChildren();
@@ -18,5 +19,11 @@ namespace ObjectParserLib.Interfaces
 
     bool SameIdentityAs(IEntity other);
     IEntity WearItem(IEntity item);
+
+    bool IsPerson();
+    bool IsSupporter();
+    bool IsContainer();
+    bool IsThing();
+
   }
 }
